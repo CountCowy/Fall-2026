@@ -123,3 +123,13 @@ class BinarySearchTree:
         #self.calculate_sizes()
         self.size+=1
         return self
+
+"""
+to extend rotate to size-augmented BSTs, you must account for the size attribute of the augmented nodes
+this means that, when right rotating as described in textbook figure 4.5, 
+node Y (which becomes the right child of X) must have its size decreased by the size of
+the original left child of X (which is A in figure 4.5) and 1, to account for its loss of children,
+and node X would need to have its size increased by the size of C, the right children of Y
+The corresponding changes would need to happen for left rotate, and this is constant time still because
+you are only changing 2 values on two nodes, not recalculating anything, so it remains constant time. 
+"""
